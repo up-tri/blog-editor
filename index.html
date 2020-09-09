@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="./app.css">
+    <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+    <script src="./plugins/tinymce-charactercount.plugin.js"></script>
+    <script>
+      tinymce.init({
+        branding: false,
+        selector: "#editor",
+        statusbar: true,
+        plugins: "charactercount",
+        toolbar: "mysidebar",
+        elementpath: false,
+        height: "100%",
+        language: "ja",
+        language_url: "./ja.js",
+        setup: function (editor) {
+          editor.ui.registry.addSidebar('mysidebar', {
+            tooltip: 'My sidebar',
+            icon: 'comment',
+            onSetup: function (api) {
+              console.log('Render panel', api.element());
+            },
+            onShow: function (api) {
+              console.log('Show panel', api.element());
+              api.element().innerHTML = 'Hello world!';
+            },
+            onHide: function (api) {
+              console.log('Hide panel', api.element());
+            }
+          });
+        },
+        init_instance_callback: function (editor) {
+          editor.on('NodeChange', function (e) {
+            const selection = tinymce.activeEditor.selection;
+            const textContent = selection.getNode().textContent;
+            const range = selection.getRng();
+            console.log(textContent)
+            console.log(range.startOffset, range.endOffset, range)
+            console.log({
+              textContent: textContent,
+              range: range,
+              start: range.startOffset,
+              end: range.endOffset,
+              slicedText: textContent.slice(range.startOffset, range.endOffset)
+            });
+            console.groupEnd()
+            console.log(
+              selection.getContent({
+                format: 'text'
+              })
+            )
+          });
+        },
+        content_css: "./custom.css"
+      });
+    </script>
+  </head>
+  <body>
+    <!-- <div class="wrapper"> -->
+    <!-- <div class="col left"> -->
+    <textarea id="editor"></textarea>
+    <!-- </div> -->
+    <!-- <div class="col right"><h2>レビュー</h2></div> -->
+    <!-- </div> -->
+  </body>
+</html>

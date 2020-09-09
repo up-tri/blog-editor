@@ -1,0 +1,87 @@
+.mceContentBody::-moz-selection {
+  position: relative;
+  background: rgba(255, 25, 75, 0.75) !important;
+}
+
+.mceContentBody::selection {
+  position: relative;
+  background: rgba(255, 25, 75, 0.75) !important;
+}
+
+.mceContentBody::-webkit-selection {
+  position: relative;
+  background: rgba(255, 25, 75, 0.75) !important;
+}
+
+#tinymce::-moz-selection {
+  position: relative;
+  background: rgba(255, 25, 75, 0.75) !important;
+}
+
+#tinymce::selection {
+  position: relative;
+  background: rgba(255, 25, 75, 0.75) !important;
+}
+
+#tinymce::-webkit-selection {
+  position: relative;
+  background: rgba(255, 25, 75, 0.75) !important;
+}
+
+:-moz-selection {
+  position: relative;
+  background: rgba(255, 25, 75, 0.75) !important;
+}
+
+::selection {
+  position: relative;
+  background: rgba(255, 25, 75, 0.75) !important;
+}
+
+::-webkit-selection {
+  position: relative;
+  background: rgba(255, 25, 75, 0.75) !important;
+}
+
+p:-moz-selection {
+  position: relative;
+  background: rgba(255, 25, 75, 0.75) !important;
+}
+
+p::selection {
+  position: relative;
+  background: rgba(255, 25, 75, 0.75) !important;
+}
+
+p::-webkit-selection {
+  position: relative;
+  background: rgba(255, 25, 75, 0.75) !important;
+}
+
+span:-moz-selection {
+  position: relative;
+  background: rgba(255, 25, 75, 0.75) !important;
+}
+
+span::selection {
+  position: relative;
+  background: rgba(255, 25, 75, 0.75) !important;
+}
+
+span::-webkit-selection {
+  position: relative;
+  background: rgba(255, 25, 75, 0.75) !important;
+}
+
+/* char count */
+
+.mce-label.mce-charactercount {
+  margin: 2px 0 2px 2px;
+  padding: 8px;
+  font-size: 12px;
+
+}
+
+.mce-path {
+  display: none !important;
+}
